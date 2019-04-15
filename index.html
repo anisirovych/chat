@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat-App</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="/css/emojionearea.min.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+
+</head>
+<body>
+    
+    <div class="login purple darken-4">
+        <div class="hello">
+            <h4>Привет, введи свой nickname</h4>
+        </div>
+        <form action="" class="login-form" name="login-form">
+            <input autofocus type="text" name="username" class="username" autocomplete="off">
+        </form>
+    </div>
+
+    <div class="authorized">
+        <nav>
+            <div class="row">
+                <div class="col s12">
+                    <div class="nav-wrapper">
+                        <div class="open-nav left">
+                            <a href="#" class="brand-logo">Чат</a>
+                            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        </div>
+                        <div class="user-name-login">
+                            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                                <li><i class="large material-icons">account_circle</i></li>
+                                <li class="user-name"></li>
+                                <button id="exit" class="exit-btn">Выход</button>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="slide-out" class="sidenav">
+            <h5>Список комнат</h5>
+            <div class="divider"></div>
+            <ul class="rooms-list"></ul>
+        </div>
+
+        <div class="chat-container">
+            <div class="row">
+                <div class="col m9">
+                    <div class="chat-room">
+                        <div class="message-container">   
+                        </div>
+                        <div class="message-form">
+                            <form name="send-message">
+                                <div class="row">
+                                    <div class="input-field col xl12">
+                                        <!-- <i class="material-icons prefix">mode_edit</i> -->
+                                        <input type="text" id="message" name="message">
+                                        <button type="submit" id="submit-message" class="submit-message">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col x13">
+                    <div class="user-list-wrapper">
+                        <div class="col s12"><h6>Пользователи Онлайн:</h6></div>
+                        <ul class="collections users-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="js/emojionearea.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/UI.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
