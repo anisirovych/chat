@@ -89,7 +89,7 @@ class UI {
         return `
             <div class="card teal lighten-2 join-chat">
                 <div class="card-content white-text">
-                    <p> ${name} присоединился к чату</p>
+                    <p> ${name} присоединился к чату &#x1f64b</p>
                 </div>
             </div>
         `;

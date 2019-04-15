@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 // users currently connected
 const usernames = { };
 // list of rooms
-const rooms = ['Основная комната', 'Комната 2', 'Комната 3'];
+const rooms = ['Основная комната &#x1f608', 'Комната 2 &#x1f649', 'Комната 3 &#x1f636'];
 const default_room = rooms[0];
 
 io.on('connection', socket => {
