@@ -10,7 +10,8 @@ $(document).ready(function() {
     $('.sidenav').sidenav();
 
     $('#message').emojioneArea({
-        pickerPosition: "rigth",
+        pickerPosition: "top",
+        tonerStyle: "bullet",
         standalone: false,
         filtersPosition: "bottom",
         searchPosition: "bottom"

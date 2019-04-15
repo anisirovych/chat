@@ -27,7 +27,7 @@ loginForm.addEventListener('submit', function (e) {
     if ( userName.value ) {
         const name = userName.value;
         socket.emit('new user', name);
-        userNameLogin.insertAdjacentHTML('beforebegin', name);
+        userNameLogin.insertAdjacentHTML('beforebegin', name); // вывод никнейма 
     }
 });
 
@@ -38,6 +38,9 @@ messageForm.addEventListener('submit', function (e) {
         socket.emit('message', message.value);
         message.innerHTML = '';
         messageForm.reset();
+        
+        var element = $('#message').emojioneArea(); 
+        element[0].emojioneArea.setText(''); // clear input after send message
     }
 });
 
