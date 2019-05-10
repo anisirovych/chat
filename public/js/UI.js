@@ -7,6 +7,7 @@ class UI {
         this.usersList = document.querySelector('.users-list');
         this.messageContainer = document.querySelector('.message-container');
         this.userName = document.querySelector('.user-name-login');
+        console.log(this.login);
     }
 
     showLogin() {
@@ -55,7 +56,7 @@ class UI {
         return `
             <div class="card blue-grey darken-1 left-room">
                 <div class="card-content white-text">
-                    <p> ${user} перешёл в другую комнату</p>
+                    <p> ${user} перешёл в другую комнату &#x1f621</p>
                 </div>
             </div>
         `;
@@ -89,7 +90,7 @@ class UI {
         return `
             <div class="card teal lighten-2 join-chat">
                 <div class="card-content white-text">
-                    <p> ${name} присоединился к чату &#x1f64b</p>
+                    <p> ${name} присоединился к чату &#x270b</p>
                 </div>
             </div>
         `;

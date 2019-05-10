@@ -16,8 +16,6 @@ $(document).ready(function() {
         filtersPosition: "bottom",
         searchPosition: "bottom"
     });
-
-    
 });
 
 

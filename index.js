@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 // users currently connected
 const usernames = { };
 // list of rooms
-const rooms = ['Основная комната &#x1f608', 'Комната 2 &#x1f649', 'Комната 3 &#x1f636'];
+const rooms = ['Основная комната &#x1f608', 'Комната 2 &#x1f649', 'Комната 3 &#x1f385', 'Private Room &#x274c'];
 const default_room = rooms[0];
 
 io.on('connection', socket => {
@@ -53,7 +53,7 @@ io.on('connection', socket => {
     socket.on('disconnect', () => {
         if ( !socket.username ) return;
 
-        io.emit('chat message', { message: `Пользователь ${socket.username} вышел из сети`, username: false });
+        io.emit('chat message', { message: `${socket.username} вышел из сети &#x1f628`, username: false });
 
         delete usernames[socket.username];
 
