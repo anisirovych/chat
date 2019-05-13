@@ -1,4 +1,3 @@
-
 class UI {
     constructor() {
         this.login = document.querySelector('.login');
@@ -7,7 +6,6 @@ class UI {
         this.usersList = document.querySelector('.users-list');
         this.messageContainer = document.querySelector('.message-container');
         this.userName = document.querySelector('.user-name-login');
-        console.log(this.login);
     }
 
     showLogin() {

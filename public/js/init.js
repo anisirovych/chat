@@ -14,7 +14,9 @@ $(document).ready(function() {
         tonerStyle: "bullet",
         standalone: false,
         filtersPosition: "bottom",
-        searchPosition: "bottom"
+        searchPosition: "bottom",
+        shortcuts: false
+
     });
 });
 
