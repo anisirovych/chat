@@ -7,21 +7,25 @@ const roomList = document.querySelector('.rooms-list');
 const userNameLogin = document.querySelector('.user-name');
 const emojionearea = document.querySelector('.emojionearea');
 const submitMessage = document.getElementById('submit-message');
+const clearMessages = document.getElementById('clear-message');
 const exitBtn = document.getElementById('exit');
 
 // Init local variables
-let currentRoom; // undefined
 let messageContainer = document.querySelector('.message-container');
 
+var logReg = /^[a-zа-яё]+$/i;
 
 
 loginForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
+
     if ( userName.value ) {
         const name = userName.value;
         socket.emit('new user', name);
         userNameLogin.insertAdjacentHTML('beforebegin', name); // вывод никнейма 
+    } else {
+        throw new Error ('asd')
     }
 });
 
@@ -38,6 +42,12 @@ messageForm.addEventListener('submit', function (e) {
         var element = $('#message').emojioneArea(); 
         element[0].emojioneArea.setText(''); // clear input after send message
     }
+});
+
+
+clearMessages.addEventListener('click', function (e) {
+    e.preventDefault();
+    messageContainer.innerHTML = '';
 });
 
 exitBtn.addEventListener('click', function (e) {

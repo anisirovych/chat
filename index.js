@@ -53,7 +53,7 @@ io.on('connection', socket => {
     socket.on('disconnect', () => {
         if ( !socket.username ) return;
 
-        io.emit('chat message', { message: `${socket.username} вышел из сети &#x1f628`, username: false });
+        io.emit('chat message', { message: `${socket.username} вышел из сети &#x1f628`, username: '' });
 
         delete usernames[socket.username];
 
@@ -61,9 +61,9 @@ io.on('connection', socket => {
         io.emit('roommates', { usernames, room: socket.room });
     });
 
-    socket.on('message', msg => {
+    socket.on('message', (socket.username, msg => {
         io.sockets.in(socket.room).emit('chat message', {username: socket.username, message: msg });
-    });
+    }));
 
     socket.on('roomchange', index => {
         socket.broadcast.to(socket.room).emit('has left the room', socket.username);
