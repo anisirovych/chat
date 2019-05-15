@@ -11,9 +11,10 @@ const exitBtn = document.getElementById('exit');
 
 // Init local variables
 let currentRoom; // undefined
+let messageContainer = document.querySelector('.message-container');
 
 
-// Forms events
+
 loginForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -31,7 +32,9 @@ messageForm.addEventListener('submit', function (e) {
         socket.emit('message', message.value);
         message.innerHTML = '';
         messageForm.reset();
-        
+
+        $('.message-container').animate({scrollTop: $('.message-container')[0].scrollHeight}, 500);
+    
         var element = $('#message').emojioneArea(); 
         element[0].emojioneArea.setText(''); // clear input after send message
     }
@@ -39,8 +42,7 @@ messageForm.addEventListener('submit', function (e) {
 
 exitBtn.addEventListener('click', function (e) {
     e.preventDefault();
-
-    console.log('exit from current session')
+    document.location.reload(true);
 });
 
 roomList.addEventListener('click', function (e) {
