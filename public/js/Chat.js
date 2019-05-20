@@ -33,14 +33,11 @@ class Chat {
     }
 
     newUserJoin(name) {
-        // this.messageContainer.innerHTML = '';
         this.messageContainer.insertAdjacentHTML('beforeend', Chat.newUserJoinTemplate(name));
-        $('.message-container').animate({scrollTop: $('.message-container')[0].scrollHeight}, 1000);
     }
 
     userLeftRoom(user) {
         this.messageContainer.insertAdjacentHTML('beforeend', Chat.userLeftRoomTemplate(user));
-        $('.message-container').animate({scrollTop: $('.message-container')[0].scrollHeight}, 1000);
     }
 
     static userLeftRoomTemplate(user) {
